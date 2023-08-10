@@ -30,11 +30,11 @@ def respuestas():
         s = False
         h = 0
         for x in range(len(entrada)):
-            x = x -h
+            x = x - h
             if s:
                 h = h + 1
+                x = x - 1
             s = False
-            print(x,"\n",entrada,len(entrada))
             if x>0 and x < len(entrada):
                 if entrada[x] == entrada[x-1] :
                     s = True
@@ -52,13 +52,9 @@ def respuestas():
             #ciudad = entrada_l[x for x in range(len(entrada_l) if len(x))>4]
             ciudad = "Buenos Aires"
             pronostico = obtener_clima(ciudad)
-            print(pronostico)
+            print(f"\n{bot} {pronostico}\n")
         elif "adios" in entrada:
             print(f"\n{bot}: Adios {nombre}, nos vemos pronto\n")
             return
         else:
             print(f"\n{bot}: Lo siento {nombre}, no entiendo ese comando. Por favor, prueba otra vez\n")
-
-#----------------------------------------Programa------------------------------------------------------
-
-respuestas()
